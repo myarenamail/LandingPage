@@ -1,0 +1,567 @@
+﻿@charset "utf-8";
+
+
+/* CSS Document */
+
+
+
+
+
+
+
+.btn-loading {
+    position: relative;
+    pointer-events: none;
+}
+.btn-loading .spinner-border {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 6px;
+}
+
+
+
+
+
+
+
+/* =========================================================
+   10. MY ARENA SERVICES
+   ========================================================= */
+
+#myArenaServices {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+/* Subtle decorative background */
+
+#myArenaServices::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: -280px;
+    right: -180px;
+    border-radius: 50%;
+    border: 1px solid rgba(226, 184, 105, 0.15);
+    box-shadow:
+        0 0 0 60px rgba(226, 184, 105, 0.025),
+        0 0 0 120px rgba(226, 184, 105, 0.015);
+    pointer-events: none;
+}
+
+#myArenaServices::after {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    bottom: -250px;
+    left: -150px;
+    border-radius: 10%;
+    border: 1px solid rgba(18, 100, 96, 0.10);
+    pointer-events: none;
+}
+
+#myArenaServices .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+#myArenaServices .services-header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#myArenaServices .services-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--gold-primary);
+
+    font-size: 0.9rem;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+#myArenaServices .services-title {
+    color: var(--navy-primary);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+#myArenaServices .services-title span {
+    color: var(--gold-primary);
+}
+
+#myArenaServices .services-description {
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+}
+
+
+/* =========================================================
+   SERVICE CARDS
+   ========================================================= */
+
+#myArenaServices .service-card {
+    position: relative;
+
+    height: 100%;
+    min-height: 430px;
+
+    padding: 32px 28px;
+
+    border-radius: 22px;
+
+    background: #ffffff;
+
+    border: 1px solid #e8e8e8;
+
+    box-shadow:
+        0 10px 35px rgba(10, 25, 47, 0.07);
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+/* Gold top line */
+
+#myArenaServices .service-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold-primary),
+            var(--gold-light),
+            transparent
+        );
+
+    transform: scaleX(0);
+    transform-origin: right;
+
+    transition: transform 0.4s ease;
+}
+
+#myArenaServices .service-card:hover::before {
+    transform: scaleX(1);
+}
+
+
+/* Hover */
+
+#myArenaServices .service-card:hover {
+    transform: translateY(-10px);
+
+    border-color: rgba(226, 184, 105, 0.65);
+
+    box-shadow:
+        0 25px 60px rgba(10, 25, 47, 0.13);
+}
+
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+#myArenaServices .service-icon {
+    width: 75px;
+    height: 75px;
+
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(18, 100, 96, 0.10),
+            rgba(226, 184, 105, 0.12)
+        );
+
+    border: 1px solid rgba(226, 184, 105, 0.30);
+
+    color: var(--navy-primary);
+
+    font-size: 1.9rem;
+
+    margin-bottom: 24px;
+
+    transition:
+        transform 0.4s ease,
+        background 0.4s ease,
+        color 0.4s ease;
+}
+
+#myArenaServices .service-card:hover .service-icon {
+    transform: rotateY(180deg);
+
+    background: var(--gold-primary);
+
+    color: var(--navy-primary);
+}
+
+
+/* =========================================================
+   CARD TEXT
+   ========================================================= */
+
+#myArenaServices .service-card h3 {
+    color: var(--navy-primary);
+
+    font-size: 1.35rem;
+
+    margin-bottom: 12px;
+}
+
+#myArenaServices .service-card p {
+    color: #666;
+
+    font-size: 0.94rem;
+
+    line-height: 1.85;
+
+    margin-bottom: 25px;
+
+    flex-grow: 1;
+}
+
+
+/* =========================================================
+   BUTTON AREA
+   ========================================================= */
+
+#myArenaServices .service-buttons {
+    display: flex;
+    gap: 10px;
+
+    margin-top: auto;
+}
+
+
+/* Main Login Button */
+
+#myArenaServices .service-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    flex: 1;
+
+    min-height: 45px;
+
+    padding: 10px 12px;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-size: 0.86rem;
+
+    font-weight: 700;
+
+    color: var(--white);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--navy-primary),
+            var(--navy-accent)
+        );
+
+    border: 1px solid var(--navy-primary);
+
+    transition: all 0.3s ease;
+}
+
+#myArenaServices .service-button:hover {
+    color: var(--white);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(18, 100, 96, 0.20);
+}
+
+
+/* Register Button */
+
+#myArenaServices .service-register {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    flex: 1;
+
+    min-height: 45px;
+
+    padding: 10px 12px;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-size: 0.86rem;
+
+    font-weight: 700;
+
+    color: var(--navy-primary);
+
+    background: #ffffff;
+
+    border: 1.5px solid var(--gold-primary);
+
+    transition: all 0.3s ease;
+}
+
+#myArenaServices .service-register:hover {
+    color: var(--navy-primary);
+
+    background: var(--gold-primary);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(226, 184, 105, 0.25);
+}
+
+
+/* =========================================================
+   SERVER CARD
+   ========================================================= */
+
+#myArenaServices .server-card {
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f8fbfb
+        );
+}
+
+#myArenaServices .server-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #198754;
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+#myArenaServices .server-status-dot {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #20c997;
+
+    box-shadow:
+        0 0 0 5px rgba(32, 201, 151, 0.10),
+        0 0 15px rgba(32, 201, 151, 0.35);
+
+    animation: serverPulse 2s infinite;
+}
+
+@keyframes serverPulse {
+
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.65;
+        transform: scale(0.85);
+    }
+
+}
+
+
+/* =========================================================
+   SERVER METRICS
+   ========================================================= */
+
+#myArenaServices .server-metric {
+    margin-bottom: 18px;
+}
+
+#myArenaServices .server-metric-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 7px;
+
+    color: #555;
+
+    font-size: 0.82rem;
+}
+
+#myArenaServices .server-metric-header strong {
+    color: var(--navy-primary);
+}
+
+#myArenaServices .server-progress {
+    height: 7px;
+
+    background: #edf0f2;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+#myArenaServices .server-progress-bar {
+    height: 100%;
+
+    width: var(--progress, 0%);
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold-dark),
+            var(--gold-light)
+        );
+
+    transition: width 1s ease;
+}
+
+
+/* =========================================================
+   SERVER INFORMATION
+   ========================================================= */
+
+#myArenaServices .server-info {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+#myArenaServices .server-info-item {
+    padding: 12px;
+
+    border-radius: 12px;
+
+    background: #f7f8f9;
+
+    border: 1px solid #eeeeee;
+}
+
+#myArenaServices .server-info-item small {
+    display: block;
+
+    color: #888;
+
+    font-size: 0.72rem;
+
+    margin-bottom: 3px;
+}
+
+#myArenaServices .server-info-item strong {
+    color: var(--navy-primary);
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1199.98px) {
+
+    #myArenaServices .service-card {
+        min-height: 420px;
+    }
+
+}
+
+@media (max-width: 767.98px) {
+
+    #myArenaServices {
+        padding: 80px 0;
+    }
+
+    #myArenaServices .services-header {
+        margin-bottom: 40px;
+    }
+
+    #myArenaServices .service-card {
+        min-height: auto;
+    }
+
+}
+
+@media (max-width: 575.98px) {
+
+    #myArenaServices {
+        padding: 65px 0;
+    }
+
+    #myArenaServices .service-buttons {
+        flex-direction: column;
+    }
+
+    #myArenaServices .server-info {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+
